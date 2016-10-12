@@ -1,7 +1,5 @@
 //Iterative deepening depth_first search
 
-#include <vector>
-#include <cstdlib>
 #include <map>
 using namespace std;
 
