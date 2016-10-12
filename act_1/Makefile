@@ -32,6 +32,10 @@ psvn2c_abstraction.c:
 	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
+%.iddfsNoNodes: %.c ../algorithms/idDfs_no_nodes.cpp
+	$(CXX) $(OPT) ../algorithms/idDfs_no_nodes.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+
 
 %.succ: %.c ../global/succ.c
 	$(CC) $(OPT) ../global/succ.c -include $< -o $@
