@@ -4,7 +4,6 @@
 #include "node.cpp"
 using namespace std;
 
-#define history_len 2
 map<int, int> d_nodes;
 
 //#define fwd_history_len = 0
