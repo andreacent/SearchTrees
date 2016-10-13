@@ -6,7 +6,10 @@ ACTDIR = act_1
 CC = gcc
 CXX = g++
 OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable
-PSVNOPT = --state_map --backward_moves --fwd_history_len=0 --bwd_history_len=0
+
+PSVNOPT0 = --state_map --no_backwards_moves --fwd_history_len=0 --keep_duplicate_rules
+PSVNOPT1 = --state_map --no_backwards_moves --fwd_history_len=1 --remove_duplicate_rules
+PSVNOPT2 = --state_map --no_backwards_moves --fwd_history_len=2 --remove_duplicate_rules
 
 psvn2c_core.c:
 	cp ../src/psvn2c_core.c ./psvn2c_core.c
@@ -18,17 +21,30 @@ psvn2c_abstraction.c:
 	cp ../src/psvn2c_abstraction.c ./psvn2c_abstraction.c
 
 %.c: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
-	../bin/psvn2c $(PSVNOPT) --name=$(*F) < $< > $@
+	../bin/psvn2c $(PSVNOPT0) --name=$(*F) < $< > $@
+	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
+
+%n1: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
+	../bin/psvn2c $(PSVNOPT1) --name=$(*F) < $< > $@
+	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
+
+%n2: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
+	../bin/psvn2c $(PSVNOPT2) --name=$(*F) < $< > $@
 	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
 
 .PRECIOUS: %.c
 
-
 # get problems to work in this activity 
-# problems:
-# 	cp ../problems/* $(PWD)/
-# algorithms implemented 
-%.iddfs: %.c ../algorithms/idDfs.cpp
+# N = 0 
+%.iddfs0: %.c ../algorithms/idDfs.cpp
+	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 1
+%.iddfs1: %n1 ../algorithms/idDfs.cpp
+	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 2
+%.iddfs2: %n2 ../algorithms/idDfs.cpp
 	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
@@ -36,33 +52,6 @@ psvn2c_abstraction.c:
 	$(CXX) $(OPT) ../algorithms/idDfs_no_nodes.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
-
-%.succ: %.c ../global/succ.c
-	$(CC) $(OPT) ../global/succ.c -include $< -o $@
-	rm -f $*.c
-
-%.dist: %.c ../global/dist.cpp
-	$(CXX) $(OPT) ../global/dist.cpp -include $< -o $@
-	rm -f $*.c
-
-%.distSummary: %.c ../global/distSummary.cpp
-	$(CXX) $(OPT) ../global/distSummary.cpp -include $< -o $@
-	rm -f $*.c
-
-abstractor:
-	$(CXX) $(OPT) ../src/abstractor.cpp ../src/psvn.cpp -o $@
-
-%.pdb: abstractor
-	@rm -f `basename $*`.abst `basename $*`.pdb `basename $*`.psvn
-	./abstractor `dirname $*`.psvn `basename $*` < `basename $*`.txt
-	make `basename $*`.distSummary
-	echo Calculating `basename $*.pdb` ...
-	@./`basename $*`.distSummary `basename $*`.pdb
-
-%.dist_pdb: %.c ../global/dist_pdb.cpp
-	$(CXX) $(OPT) ../global/dist_pdb.cpp -include $< -o $@
-	rm -f $*.c
-
 .PHONY: clean
 clean:
-	rm -fr *.succ *.dist *.distSummary *.dist_pdb psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c abstractor *.dSYM *.o *~
+	rm -fr *.succ *.iddfs* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
