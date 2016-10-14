@@ -35,8 +35,11 @@ psvn2c_abstraction.c:
 .PRECIOUS: %.c
 
 # get problems to work in this activity 
-# N = 0 
-%.iddfs0: %.c ../algorithms/idDfs.cpp
+%.actividad1: %.c ../algorithms/actividad1.cpp
+	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 0
+%.idDfs: %.c ../algorithms/idDfs.cpp
 	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
