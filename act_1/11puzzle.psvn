@@ -1,0 +1,45 @@
+# This file was created by genNpuzzle.cpp with the following command line parameters:
+#  12
+
+# number of state variables = the number of tokens
+12
+
+# All state variables have 12 possible values.
+ 12 12 12 12 12 12 12 12 12 12 12 12
+
+0 X1 -  -  -  -  -  -  -  -  -  -  => X1 0 -  -  -  -  -  -  -  -  -  -  LABEL RightAt0
+-  0 X2 -  -  -  -  -  -  -  -  -  => -  X2 0 -  -  -  -  -  -  -  -  -  LABEL RightAt1
+-  -  -  0 X4 -  -  -  -  -  -  -  => -  -  -  X4 0 -  -  -  -  -  -  -  LABEL RightAt3
+-  -  -  -  0 X5 -  -  -  -  -  -  => -  -  -  -  X5 0 -  -  -  -  -  -  LABEL RightAt4
+-  -  -  -  -  -  0 X7 -  -  -  -  => -  -  -  -  -  -  X7 0 -  -  -  -  LABEL RightAt6
+-  -  -  -  -  -  -  0 X8 -  -  -  => -  -  -  -  -  -  -  X8 0 -  -  -  LABEL RightAt7
+-  -  -  -  -  -  -  -  -  0 X10 -  => -  -  -  -  -  -  -  -  -  X10 0 -  LABEL RightAt9
+-  -  -  -  -  -  -  -  -  -  0 X11 => -  -  -  -  -  -  -  -  -  -  X11 0 LABEL RightAt10
+X0 0 -  -  -  -  -  -  -  -  -  -  => 0 X0 -  -  -  -  -  -  -  -  -  -  LABEL LeftAt1
+-  X1 0 -  -  -  -  -  -  -  -  -  => -  0 X1 -  -  -  -  -  -  -  -  -  LABEL LeftAt2
+-  -  -  X3 0 -  -  -  -  -  -  -  => -  -  -  0 X3 -  -  -  -  -  -  -  LABEL LeftAt4
+-  -  -  -  X4 0 -  -  -  -  -  -  => -  -  -  -  0 X4 -  -  -  -  -  -  LABEL LeftAt5
+-  -  -  -  -  -  X6 0 -  -  -  -  => -  -  -  -  -  -  0 X6 -  -  -  -  LABEL LeftAt7
+-  -  -  -  -  -  -  X7 0 -  -  -  => -  -  -  -  -  -  -  0 X7 -  -  -  LABEL LeftAt8
+-  -  -  -  -  -  -  -  -  X9 0 -  => -  -  -  -  -  -  -  -  -  0 X9 -  LABEL LeftAt10
+-  -  -  -  -  -  -  -  -  -  X10 0 => -  -  -  -  -  -  -  -  -  -  0 X10 LABEL LeftAt11
+X0 -  -  0 -  -  -  -  -  -  -  -  => 0 -  -  X0 -  -  -  -  -  -  -  -  LABEL UpAt3
+-  X1 -  -  0 -  -  -  -  -  -  -  => -  0 -  -  X1 -  -  -  -  -  -  -  LABEL UpAt4
+-  -  X2 -  -  0 -  -  -  -  -  -  => -  -  0 -  -  X2 -  -  -  -  -  -  LABEL UpAt5
+-  -  -  X3 -  -  0 -  -  -  -  -  => -  -  -  0 -  -  X3 -  -  -  -  -  LABEL UpAt6
+-  -  -  -  X4 -  -  0 -  -  -  -  => -  -  -  -  0 -  -  X4 -  -  -  -  LABEL UpAt7
+-  -  -  -  -  X5 -  -  0 -  -  -  => -  -  -  -  -  0 -  -  X5 -  -  -  LABEL UpAt8
+-  -  -  -  -  -  X6 -  -  0 -  -  => -  -  -  -  -  -  0 -  -  X6 -  -  LABEL UpAt9
+-  -  -  -  -  -  -  X7 -  -  0 -  => -  -  -  -  -  -  -  0 -  -  X7 -  LABEL UpAt10
+-  -  -  -  -  -  -  -  X8 -  -  0 => -  -  -  -  -  -  -  -  0 -  -  X8 LABEL UpAt11
+0 -  -  X3 -  -  -  -  -  -  -  -  => X3 -  -  0 -  -  -  -  -  -  -  -  LABEL DownAt0
+-  0 -  -  X4 -  -  -  -  -  -  -  => -  X4 -  -  0 -  -  -  -  -  -  -  LABEL DownAt1
+-  -  0 -  -  X5 -  -  -  -  -  -  => -  -  X5 -  -  0 -  -  -  -  -  -  LABEL DownAt2
+-  -  -  0 -  -  X6 -  -  -  -  -  => -  -  -  X6 -  -  0 -  -  -  -  -  LABEL DownAt3
+-  -  -  -  0 -  -  X7 -  -  -  -  => -  -  -  -  X7 -  -  0 -  -  -  -  LABEL DownAt4
+-  -  -  -  -  0 -  -  X8 -  -  -  => -  -  -  -  -  X8 -  -  0 -  -  -  LABEL DownAt5
+-  -  -  -  -  -  0 -  -  X9 -  -  => -  -  -  -  -  -  X9 -  -  0 -  -  LABEL DownAt6
+-  -  -  -  -  -  -  0 -  -  X10 -  => -  -  -  -  -  -  -  X10 -  -  0 -  LABEL DownAt7
+-  -  -  -  -  -  -  -  0 -  -  X11 => -  -  -  -  -  -  -  -  X11 -  -  0 LABEL DownAt8
+
+GOAL 1 2 3 4 5 6 7 8 9 10 11 0 

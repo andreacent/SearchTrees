@@ -27,6 +27,11 @@ if [ $1 -eq 0 ]; then
 	make topSpin26-4.iddfs1
 	make topSpin26-4.iddfs2
 
+	#11-PUZZLE
+	make 11-puzzle.iddfs0
+	make 11-puzzle.iddfs1
+	make 11-puzzle.iddfs2
+
 elif [ $1 -eq 1 ]; then
 	rm -rf resultados_iddfs.txt
 	touch resultados_iddfs.txt
@@ -109,6 +114,21 @@ elif [ $1 -eq 1 ]; then
 	echo >> resultados_iddfs.txt
 	echo "N=2" >> resultados_iddfs.txt
 	./topSpin26-4.iddfs2 $D $I >> resultados_iddfs.txt
+
+	# 11-PUZZLE
+	D=20
+	echo >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "TopSpin 22 4" >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "N=0" >> resultados.txt
+	./11-puzzle.iddfs0 $D $I >> resultados.txt
+	echo >> resultados.txt
+	echo "N=1" >> resultados.txt
+	./11-puzzle.iddfs1 $D $I >> resultados.txt
+	echo >> resultados.txt
+	echo "N=2" >> resultados.txt
+	./11-puzzle.iddfs2 $D $I >> resultados.txt
 
 fi
 
