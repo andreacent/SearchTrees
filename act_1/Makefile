@@ -38,15 +38,15 @@ psvn2c_abstraction.c:
 	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 0
-%.act0: %.c ../algorithms/idDfs.cpp
+%.act0: %.c ../algorithms/actividad1.cpp
 	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
-%.act1: %n1 ../algorithms/idDfs.cpp
+%.act1: %n1 ../algorithms/actividad1.cpp
 	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 2
-%.act2: %n2 ../algorithms/idDfs.cpp
+%.act2: %n2 ../algorithms/actividad1.cpp
 	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
