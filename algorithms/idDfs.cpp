@@ -70,19 +70,19 @@ Node* iterative_deepening_depth_first_search(int bound){
 void print_d_nodes(int bound){
 	//unsigned long sum =0;
     //show number of nodes created
-    fprintf(stderr, "depth\tnodes\n");     
+    printf("depth\tnodes\n");     
     for(int i=0; i<=bound; i++ ){
     	//sum += d_nodes[i];
-        fprintf(stderr, "%d\t%d\n",i,d_nodes[i]);
+        printf("%d\t%d\n",i,d_nodes[i]);
     } 
-    //fprintf(stderr, "Total %lu\n",sum); 
+    //printf("Total %lu\n",sum); 
 }
 
 int main(int argc, char **argv) {  
 
     // Error
     if( argc < 3 ) {
-        fprintf(stderr, "More arguments needed.\n");
+        printf("More arguments needed.\n");
         exit(-1);
     }
 
@@ -99,13 +99,13 @@ int main(int argc, char **argv) {
     if( iterative ) {
         for(int d=0; d<=bound; d++){
             goal = iterative_deepening_depth_first_search(d);
-            if(goal == nullptr) fprintf(stderr, "No goal reached\n");
+            if(goal == nullptr) printf("No goal reached\n");
             print_d_nodes(d);
-            fprintf(stderr, "----------------\n");
+            printf("----------------\n");
         }
     }else{
         goal = iterative_deepening_depth_first_search(bound);
-        if(goal == nullptr) fprintf(stderr, "No goal reached\n");
+        if(goal == nullptr) printf("No goal reached\n");
         print_d_nodes(bound);
     }
 

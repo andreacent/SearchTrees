@@ -34,12 +34,28 @@ psvn2c_abstraction.c:
 
 .PRECIOUS: %.c
 
-# get problems to work in this activity 
 %.actividad1: %.c ../algorithms/actividad1.cpp
 	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 0
-%.idDfs: %.c ../algorithms/idDfs.cpp
+%.act0: %.c ../algorithms/idDfs.cpp
+	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 1
+%.act1: %n1 ../algorithms/idDfs.cpp
+	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 2
+%.act2: %n2 ../algorithms/idDfs.cpp
+	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+
+
+%.iddfs: %.c ../algorithms/idDfs.cpp
+	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 0
+%.iddfs0: %.c ../algorithms/idDfs.cpp
 	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
@@ -51,10 +67,12 @@ psvn2c_abstraction.c:
 	$(CXX) $(OPT) ../algorithms/idDfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
+
+
 %.iddfsNoNodes: %.c ../algorithms/idDfs_no_nodes.cpp
 	$(CXX) $(OPT) ../algorithms/idDfs_no_nodes.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
 .PHONY: clean
 clean:
-	rm -fr *.succ *.iddfs* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
+	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~

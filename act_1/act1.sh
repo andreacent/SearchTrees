@@ -28,87 +28,87 @@ if [ $1 -eq 0 ]; then
 	make topSpin26-4.iddfs2
 
 elif [ $1 -eq 1 ]; then
-	touch clean.txt
+	rm -rf resultados_iddfs.txt
+	touch resultados_iddfs.txt
 
 	I=0
 
 	# PANCAKE
 	D=6
-	echo "-----------------------"
-	echo "Pancake 24"
-	echo "-----------------------"
-	echo "N=0"
-	./pancake24.iddfs0 $D $I >> clean.txt
-	echo
-	echo "N=1"
-	./pancake24.iddfs1 $D $I >> clean.txt
-	echo
-	echo "N=2"
-	./pancake24.iddfs2 $D $I >> clean.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "Pancake 24" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./pancake24.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./pancake24.iddfs1 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=2" >> resultados_iddfs.txt
+	./pancake24.iddfs2 $D $I >> resultados_iddfs.txt
 
-	echo
-	echo "-----------------------"
-	echo "Pancake 28"
-	echo "-----------------------"
-	echo "N=0"
-	./pancake28.iddfs0 $D $I >> clean.txt
-	echo
-	echo "N=1"
-	./pancake28.iddfs1 $D $I >> clean.txt
-	echo
-	echo "N=2"
-	./pancake28.iddfs2 $D $I >> clean.txt
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "Pancake 28" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./pancake28.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./pancake28.iddfs1 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=2" >> resultados_iddfs.txt
+	./pancake28.iddfs2 $D $I >> resultados_iddfs.txt
 
 	# HANOI
 	D=12
-	echo
-	echo "-----------------------"
-	echo "Hanoi 14 4"
-	echo "-----------------------"
-	echo "N=0"
-	./hanoi-14-4.iddfs0 $D $I >> clean.txt
-	echo
-	echo "N=1"
-	./hanoi-14-4.iddfs1 $D $I >> clean.txt
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "Hanoi 14 4" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./hanoi-14-4.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./hanoi-14-4.iddfs1 $D $I >> resultados_iddfs.txt
 
-	echo
-	echo "-----------------------"
-	echo "Hanoi 16 4"
-	echo "-----------------------"
-	echo "N=0"
-	./hanoi-16-4.iddfs0 $D $I >> clean.txt
-	echo
-	echo "N=1"
-	./hanoi-16-4.iddfs1 $D $I >> clean.txt
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "Hanoi 16 4" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./hanoi-16-4.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./hanoi-16-4.iddfs1 $D $I >> resultados_iddfs.txt
 
 	# TOPSPIN
 	D=7
-	echo
-	echo "-----------------------"
-	echo "TopSpin 22 4"
-	echo "-----------------------"
-	echo "N=0"
-	./topSpin22-4.iddfs0 $D $I >> clean.txt
-	echo
-	echo "N=1"
-	./topSpin22-4.iddfs1 $D $I >> clean.txt
-	echo
-	echo "N=2"
-	./topSpin22-4.iddfs2 $D $I >> clean.txt
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "TopSpin 22 4" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./topSpin22-4.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./topSpin22-4.iddfs1 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=2" >> resultados_iddfs.txt
+	./topSpin22-4.iddfs2 $D $I >> resultados_iddfs.txt
 
-	echo
-	echo "-----------------------"
-	echo "TopSpin 26 4"
-	echo "-----------------------"
-	echo "N=0"
-	./topSpin26-4.iddfs0 $D $I >> clean.txt
-	echo
-	echo "N=1"
-	./topSpin26-4.iddfs1 $D $I >> clean.txt
-	echo
-	echo "N=2"
-	./topSpin26-4.iddfs2 $D $I >> clean.txt
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "TopSpin 26 4" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./topSpin26-4.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./topSpin26-4.iddfs1 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=2" >> resultados_iddfs.txt
+	./topSpin26-4.iddfs2 $D $I >> resultados_iddfs.txt
 
-	rm -rf clean.txt
 fi
 
