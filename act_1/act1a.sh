@@ -60,28 +60,6 @@ elif [ $1 -eq 1 ]; then
 	echo "N=2" >> resultados.txt
 	./pancake28.act2 $D $I >> resultados.txt
 
-	# HANOI
-	D=12
-	echo >> resultados.txt
-	echo "-----------------------" >> resultados.txt
-	echo "Hanoi 14 4" >> resultados.txt
-	echo "-----------------------" >> resultados.txt
-	echo "N=0" >> resultados.txt
-	./hanoi-14-4.act0 $D $I >> resultados.txt
-	echo >> resultados.txt
-	echo "N=1" >> resultados.txt
-	./hanoi-14-4.act1 $D $I >> resultados.txt
-
-	echo >> resultados.txt
-	echo "-----------------------" >> resultados.txt
-	echo "Hanoi 16 4" >> resultados.txt
-	echo "-----------------------" >> resultados.txt
-	echo "N=0" >> resultados.txt
-	./hanoi-16-4.act0 $D $I >> resultados.txt
-	echo >> resultados.txt
-	echo "N=1" >> resultados.txt
-	./hanoi-16-4.act1 $D $I >> resultados.txt
-
 	# TOPSPIN
 	D=7
 	echo >> resultados.txt
@@ -110,5 +88,27 @@ elif [ $1 -eq 1 ]; then
 	echo "N=2" >> resultados.txt
 	./topSpin26-4.act2 $D $I >> resultados.txt
 
+	
+	# HANOI
+	D=12
+	echo >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "Hanoi 14 4" >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "N=0" >> resultados.txt
+	./hanoi-14-4.act0 $D $I >> resultados.txt
+	echo >> resultados.txt
+	echo "N=1" >> resultados.txt
+	./hanoi-14-4.act1 $D $I >> resultados.txt
+
+	echo >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "Hanoi 16 4" >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "N=0" >> resultados.txt
+	./hanoi-16-4.act0 $D $I >> resultados.txt
+	echo >> resultados.txt
+	echo "N=1" >> resultados.txt
+	./hanoi-16-4.act1 $D $I >> resultados.txt
 fi
 

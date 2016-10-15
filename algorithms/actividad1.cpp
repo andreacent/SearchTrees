@@ -24,9 +24,9 @@ class Node {
 			int hist = init_history; 
 			unsigned bound = 0;
 			printf("%s \n","Depth\tNodos");
-			init_fwd_iter(&iter, &state);
+			//init_fwd_iter(&iter, &state);
 			while (bound <= cota) {
-				this->bounded_search(0, bound,iter,hist);
+				this->bounded_search(0, bound,hist);
 				printf("%u\t%u \n",bound, counter);
 				bound++;
 				counter = 0;
@@ -38,13 +38,17 @@ class Node {
 			corresponde a la presencia de un nodo en esa profundidad. 
 			En caso contrario, retorna 0.*/
 
-		int bounded_search(unsigned d, unsigned bound,ruleid_iterator_t iter,int hist){
+		int bounded_search(unsigned d, unsigned bound,int hist){
 			state_t child;
 	    	int id,child_hist;
 	
 			if (d>=bound) {
 				return 1;
 			}
+
+			ruleid_iterator_t iter;
+			init_fwd_iter(&iter, &state);
+			
 			while( (id = next_ruleid(&iter)) >= 0 ) {
 
 				if (!fwd_rule_valid_for_history(hist,id)) continue;
@@ -52,7 +56,7 @@ class Node {
 
 	        	apply_fwd_rule(id, &state, &child);
 	        	Node aux = make_node(child,id);
-	        	counter += aux.bounded_search(d+1,bound,iter,child_hist);
+	        	counter += aux.bounded_search(d+1,bound,child_hist);
 			};
 			return 0;
 		};
