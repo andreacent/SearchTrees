@@ -89,21 +89,6 @@ elif [ $1 -eq 1 ]; then
 	echo >> resultados.txt
 	echo "N=2" >> resultados.txt
 	./topSpin26-4.act2 $D >> resultados.txt
-
-	# 11-PUZZLE
-	D=20
-	echo >> resultados.txt
-	echo "-----------------------" >> resultados.txt
-	echo "PUZZLE" >> resultados.txt
-	echo "-----------------------" >> resultados.txt
-	echo "N=0" >> resultados.txt
-	./11puzzle.act0 $D >> resultados.txt
-	echo >> resultados.txt
-	echo "N=1" >> resultados.txt
-	./11puzzle.act1 $D >> resultados.txt
-	echo >> resultados.txt
-	echo "N=2" >> resultados.txt
-	./11puzzle.act2 $D >> resultados.txt
 	
 	# HANOI
 	D=12
@@ -126,5 +111,21 @@ elif [ $1 -eq 1 ]; then
 	echo >> resultados.txt
 	echo "N=1" >> resultados.txt
 	./hanoi-16-4.act1 $D >> resultados.txt
+
+	
+	# 11-PUZZLE
+	D=20
+	echo >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "PUZZLE" >> resultados.txt
+	echo "-----------------------" >> resultados.txt
+	echo "N=0" >> resultados.txt
+	./11puzzle.act0 $D >> resultados.txt
+	echo >> resultados.txt
+	echo "N=1" >> resultados.txt
+	./11puzzle.act1 $D >> resultados.txt
+	echo >> resultados.txt
+	echo "N=2" >> resultados.txt
+	./11puzzle.act2 $D >> resultados.txt
 fi
 

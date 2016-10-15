@@ -28,9 +28,9 @@ if [ $1 -eq 0 ]; then
 	make topSpin26-4.iddfs2
 
 	#11-PUZZLE
-	make 11-puzzle.iddfs0
-	make 11-puzzle.iddfs1
-	make 11-puzzle.iddfs2
+	make 11puzzle.iddfs0
+	make 11puzzle.iddfs1
+	make 11puzzle.iddfs2
 
 elif [ $1 -eq 1 ]; then
 	rm -rf resultados_iddfs.txt
@@ -65,28 +65,6 @@ elif [ $1 -eq 1 ]; then
 	echo "N=2" >> resultados_iddfs.txt
 	./pancake28.iddfs2 $D $I >> resultados_iddfs.txt
 
-	# HANOI
-	D=12
-	echo >> resultados_iddfs.txt
-	echo "-----------------------" >> resultados_iddfs.txt
-	echo "Hanoi 14 4" >> resultados_iddfs.txt
-	echo "-----------------------" >> resultados_iddfs.txt
-	echo "N=0" >> resultados_iddfs.txt
-	./hanoi-14-4.iddfs0 $D $I >> resultados_iddfs.txt
-	echo >> resultados_iddfs.txt
-	echo "N=1" >> resultados_iddfs.txt
-	./hanoi-14-4.iddfs1 $D $I >> resultados_iddfs.txt
-
-	echo >> resultados_iddfs.txt
-	echo "-----------------------" >> resultados_iddfs.txt
-	echo "Hanoi 16 4" >> resultados_iddfs.txt
-	echo "-----------------------" >> resultados_iddfs.txt
-	echo "N=0" >> resultados_iddfs.txt
-	./hanoi-16-4.iddfs0 $D $I >> resultados_iddfs.txt
-	echo >> resultados_iddfs.txt
-	echo "N=1" >> resultados_iddfs.txt
-	./hanoi-16-4.iddfs1 $D $I >> resultados_iddfs.txt
-
 	# TOPSPIN
 	D=7
 	echo >> resultados_iddfs.txt
@@ -115,6 +93,28 @@ elif [ $1 -eq 1 ]; then
 	echo "N=2" >> resultados_iddfs.txt
 	./topSpin26-4.iddfs2 $D $I >> resultados_iddfs.txt
 
+	# HANOI
+	D=12
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "Hanoi 14 4" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./hanoi-14-4.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./hanoi-14-4.iddfs1 $D $I >> resultados_iddfs.txt
+
+	echo >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "Hanoi 16 4" >> resultados_iddfs.txt
+	echo "-----------------------" >> resultados_iddfs.txt
+	echo "N=0" >> resultados_iddfs.txt
+	./hanoi-16-4.iddfs0 $D $I >> resultados_iddfs.txt
+	echo >> resultados_iddfs.txt
+	echo "N=1" >> resultados_iddfs.txt
+	./hanoi-16-4.iddfs1 $D $I >> resultados_iddfs.txt
+
 	# 11-PUZZLE
 	D=20
 	echo >> resultados.txt
@@ -122,13 +122,13 @@ elif [ $1 -eq 1 ]; then
 	echo "TopSpin 22 4" >> resultados.txt
 	echo "-----------------------" >> resultados.txt
 	echo "N=0" >> resultados.txt
-	./11-puzzle.iddfs0 $D $I >> resultados.txt
+	./11puzzle.iddfs0 $D $I >> resultados.txt
 	echo >> resultados.txt
 	echo "N=1" >> resultados.txt
-	./11-puzzle.iddfs1 $D $I >> resultados.txt
+	./11puzzle.iddfs1 $D $I >> resultados.txt
 	echo >> resultados.txt
 	echo "N=2" >> resultados.txt
-	./11-puzzle.iddfs2 $D $I >> resultados.txt
+	./11puzzle.iddfs2 $D $I >> resultados.txt
 
 fi
 
