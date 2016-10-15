@@ -37,8 +37,8 @@ void puzzle_rule_right_cost(int r) {
             tstr2=tstr2+"-  ";
         }    
         tstr1=tstr1+convertInt(0)+" ";  
-        tstr2=tstr2+"X"+convertInt(r+1)+" ";
-        tstr1=tstr1+"X"+convertInt(r+1)+" ";  
+        tstr2=tstr2+"X"+" ";
+        tstr1=tstr1+"X"+" ";  
         tstr2=tstr2+convertInt(0)+" ";
         for (int i=r+2; i<N; i++)  
         {
@@ -65,8 +65,8 @@ void puzzle_rule_left_cost(int r) {
             tstr2=tstr2+"-  ";
         }     
         tstr2=tstr2+convertInt(0)+" ";
-        tstr2=tstr2+"X"+convertInt(r-1)+" ";
-        tstr1=tstr1+"X"+convertInt(r-1)+" "; 
+        tstr2=tstr2+"X"+" ";
+        tstr1=tstr1+"X"+" "; 
         tstr1=tstr1+convertInt(0)+" ";  
         for (int i=r+1; i<N; i++)  
         {
@@ -92,14 +92,14 @@ void puzzle_rule_up_cost(int r) {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }  
-        tstr1=tstr1+"X"+convertInt(r-raiz)+" ";
+        tstr1=tstr1+"X"+" ";
         tstr2=tstr2+convertInt(0)+" ";  
         for (int i=r-raiz+1; i<r; i++)  
         {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }    
-        tstr2=tstr2+"X"+convertInt(r-raiz)+" ";  
+        tstr2=tstr2+"X"+" ";  
         tstr1=tstr1+convertInt(0)+" ";
         for (int i=r+1; i<N; i++)  
         {
@@ -128,13 +128,13 @@ void puzzle_rule_down_cost(int r) {
             tstr2=tstr2+"-  ";
         }  
         tstr1=tstr1+convertInt(0)+" ";  
-        tstr2=tstr2+"X"+convertInt(r+raiz)+" ";
+        tstr2=tstr2+"X"+" ";
         for (int i=r+1; i<r+raiz; i++)  
         {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }    
-        tstr1=tstr1+"X"+convertInt(r+raiz)+" ";  
+        tstr1=tstr1+"X"+" ";  
         tstr2=tstr2+convertInt(0)+" ";
         for (int i=r+raiz+1; i<N; i++)  
         {
