@@ -2,7 +2,8 @@
 using namespace std;
 map<int, unsigned> d_nodes;
 map<int, double> bf_nodes;
-bool gtbf = false;
+bool gtbf = false; // true cuando el counter es mayor que el factor de ramificacion
+unsigned dgtbf;
 unsigned counter = 1;
 class Node {
 	state_t state;
@@ -28,16 +29,21 @@ class Node {
 			//Node root = make_node(state,NULL,-1,0);
 			int hist = init_history; 
 			unsigned bound = 0;
-			//printf("%s \n","Depth\tNodos");
+			printf("%s \n","Depth\tNodos\t\tFactor");
 
 			//init_fwd_iter(&iter, &state);
 
 			while (bound <= cota) {
 				this->bounded_search(0, bound,hist);
-				//printf("%u\t%u \n",bound, counter);
+				if(bound > 0){
+					bf_nodes[bound-1] = counter / d_nodes[bound-1];
+					printf("%f\n%u\t%u\t\t",bf_nodes[bound-1],bound, counter);
+				}else{
+					printf("%u\t%u\t\t",bound, counter);
+				}				
 				d_nodes[bound] = counter;
 				if(num_fwd_rules < counter && !gtbf){
-					printf("Profundidad para la cual el número de nodos supera el número de estados: %d\n", bound);
+					dgtbf=bound;
 					gtbf = true;
 				}
 				bound++;
@@ -84,12 +90,14 @@ class Node {
 };
 
 // imprime cantidad de nodos y factor de ramificacion
+/*
 void print_d_nodes(int bound){
     printf("Depth\tNodes\t\tFactor\n");     
     for(int i=0; i<=bound; i++ ){
-        printf("%d\t%d\t\t%f\n",i,d_nodes[i],bf_nodes[i]);
+        printf("%d\t%u\t\t%f\n",i,d_nodes[i],bf_nodes[i]);
     } 
 }
+*/
 
 int main(int argc, char const *argv[]) {
 
@@ -101,12 +109,16 @@ int main(int argc, char const *argv[]) {
 	raiz = raiz.make_root_node(state);
 	raiz.iddfs(raiz.get_state(), cota);
 
+	printf("\nProfundidad para la cual el número de nodos supera el número de estados: %u\n", dgtbf);
+
 	//branching factor 
+	/*
     for(int i=0; i<(int)cota; i++ ){
         bf_nodes[i] = d_nodes[i+1] / d_nodes[i];
     }
     bf_nodes[(int)cota] = bf_nodes[(int)cota-1];
     print_d_nodes((int)cota);
+    */
 
 	return 0;
 };

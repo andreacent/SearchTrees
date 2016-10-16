@@ -2,80 +2,79 @@
 Pancake 24
 -----------------------
 N=0
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		23.000000
 1	23		23.000000
 2	529		23.000000
 3	12167		23.000000
 4	279841		23.000000
 5	6436343		23.000000
-6	148035889		23.000000
+6	148035889		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=1
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		23.000000
 1	23		22.000000
 2	506		22.000000
 3	11132		22.000000
 4	244904		22.000000
 5	5387888		22.000000
-6	118533536		22.000000
+6	118533536		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=2
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		23.000000
 1	23		22.000000
 2	506		21.000000
 3	11131		21.000000
 4	244860		21.000000
 5	5386437		21.000000
-6	118490988		21.000000
+6	118490988		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 -----------------------
 Pancake 28
 -----------------------
 N=0
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		27.000000
 1	27		27.000000
 2	729		27.000000
 3	19683		27.000000
 4	531441		27.000000
 5	14348907		27.000000
-6	387420489		27.000000
+6	387420489		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=1
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		27.000000
 1	27		26.000000
 2	702		26.000000
 3	18252		26.000000
 4	474552		26.000000
 5	12338352		26.000000
-6	320797152		26.000000
+6	320797152		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=2
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		27.000000
 1	27		26.000000
 2	702		25.000000
 3	18251		25.000000
 4	474500		25.000000
 5	12336325		25.000000
-6	320726900		25.000000
+6	320726900		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 -----------------------
 TopSpin 22 4
 -----------------------
 N=0
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		22.000000
 1	22		22.000000
 2	484		22.000000
@@ -83,11 +82,11 @@ Depth	Nodes		Factor
 4	234256		22.000000
 5	5153632		22.000000
 6	113379904		22.000000
-7	-1800609408		22.000000
+7	2494357888		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=1
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		22.000000
 1	22		13.000000
 2	297		11.000000
@@ -95,11 +94,11 @@ Depth	Nodes		Factor
 4	34917		10.000000
 5	359044		10.000000
 6	3685933		10.000000
-7	37916082		10.000000
+7	37916082		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=2
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		22.000000
 1	22		13.000000
 2	297		10.000000
@@ -107,14 +106,14 @@ Depth	Nodes		Factor
 4	31696		9.000000
 5	295838		9.000000
 6	2710563		9.000000
-7	24741989		9.000000
+7	24741989		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 -----------------------
 TopSpin 26 4
 -----------------------
 N=0
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		26.000000
 1	26		26.000000
 2	676		26.000000
@@ -122,11 +121,11 @@ Depth	Nodes		Factor
 4	456976		26.000000
 5	11881376		26.000000
 6	308915776		12.000000
-7	-558124416		12.000000
+7	3736842880		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=1
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		26.000000
 1	26		15.000000
 2	403		12.000000
@@ -134,11 +133,11 @@ Depth	Nodes		Factor
 4	57614		11.000000
 5	639658		11.000000
 6	7079228		11.000000
-7	78662142		11.000000
+7	78662142		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 N=2
-Profundidad para la cual el número de nodos supera el número de estados: 2
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		26.000000
 1	26		15.000000
 2	403		12.000000
@@ -146,51 +145,51 @@ Depth	Nodes		Factor
 4	52753		10.000000
 5	530056		9.000000
 6	5172126		9.000000
-7	50068605		9.000000
+7	50068605		
+Profundidad para la cual el número de nodos supera el número de estados: 2
 
 -----------------------
 Hanoi 14 4
 -----------------------
 N=0
+Depth	Nodos		Factor 
+0	1		12.000000
+1	12		9.000000
+2	108		7.000000
+3	852		7.000000
+4	6348		7.000000
+5	45924		7.000000
+6	326460		7.000000
+7	2292852		6.000000
+8	15950940		6.000000
+9	110051172		6.000000
+10	753514860		1.000000
+11	827434004		0.000000
+12	226580860		
 Profundidad para la cual el número de nodos supera el número de estados: 3
-Depth	Nodes		Factor
-0	1		7.000000
-1	7		6.000000
-2	47		6.000000
-3	313		6.000000
-4	2065		6.000000
-5	13549		6.000000
-6	88413		6.000000
-7	574025		6.000000
-8	3709311		6.000000
-9	23865819		6.000000
-10	152951749		6.000000
-11	976767173		1.000000
-12	1922790299		1.000000
 
 N=1
+Depth	Nodos		Factor 
+0	1		12.000000
+1	12		4.000000
+2	50		4.000000
+3	231		5.000000
+4	1217		5.000000
+5	6638		5.000000
+6	37222		5.000000
+7	212691		5.000000
+8	1230266		5.000000
+9	7165784		5.000000
+10	41877785		5.000000
+11	244962740		5.000000
+12	1431973155		
 Profundidad para la cual el número de nodos supera el número de estados: 3
-Depth	Nodes		Factor
-0	1		7.000000
-1	7		6.000000
-2	43		5.000000
-3	253		5.000000
-4	1474		5.000000
-5	8541		5.000000
-6	49277		5.000000
-7	283374		5.000000
-8	1625259		5.000000
-9	9300358		5.000000
-10	53113649		5.000000
-11	302778888		5.000000
-12	1723142637		5.000000
 
 -----------------------
 Hanoi 16 4
 -----------------------
 N=0
-Profundidad para la cual el número de nodos supera el número de estados: 3
-Depth	Nodes		Factor
+Depth	Nodos		Factor 
 0	1		7.000000
 1	7		6.000000
 2	47		6.000000
@@ -203,24 +202,25 @@ Depth	Nodes		Factor
 9	23865819		6.000000
 10	152951749		6.000000
 11	976767173		1.000000
-12	1922790299		1.000000
+12	1922790299		
+Profundidad para la cual el número de nodos supera el número de estados: 3
 
 N=1
+Depth	Nodos		Factor 
+0	1		12.000000
+1	12		4.000000
+2	50		4.000000
+3	231		5.000000
+4	1217		5.000000
+5	6638		5.000000
+6	37222		5.000000
+7	212691		5.000000
+8	1230266		5.000000
+9	7165784		5.000000
+10	41877785		5.000000
+11	244962740		5.000000
+12	1431973155		
 Profundidad para la cual el número de nodos supera el número de estados: 3
-Depth	Nodes		Factor
-0	1		7.000000
-1	7		6.000000
-2	43		5.000000
-3	253		5.000000
-4	1474		5.000000
-5	8541		5.000000
-6	49277		5.000000
-7	283374		5.000000
-8	1625259		5.000000
-9	9300358		5.000000
-10	53113649		5.000000
-11	302778888		5.000000
-12	1723142637		5.000000
 
 -----------------------
 PUZZLE
