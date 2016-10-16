@@ -1,10 +1,12 @@
 #include <map>
 using namespace std;
+
 map<int, unsigned> d_nodes;
-map<int, double> bf_nodes;
+map<int, float> bf_nodes;
 bool gtbf = false; // true cuando el counter es mayor que el factor de ramificacion
 unsigned dgtbf;
 unsigned counter = 1;
+
 class Node {
 	state_t state;
 	Node* father;
@@ -24,19 +26,18 @@ class Node {
 		// Función que implementa el algoritmo de búsqueda en profundidad iterativa
 		// Adicionalemente se imprime la tabla de resultados. 
 
-		void iddfs(state_t state, unsigned cota){
-			ruleid_iterator_t iter;
-			//Node root = make_node(state,NULL,-1,0);
+		void iddfs(unsigned cota){
+			//ruleid_iterator_t iter;
 			int hist = init_history; 
 			unsigned bound = 0;
 			printf("%s \n","Depth\tNodos\t\tFactor");
 
-			//init_fwd_iter(&iter, &state);
+			//init_fwd_iter(&iter, &this->state);
 
 			while (bound <= cota) {
 				this->bounded_search(0, bound,hist);
 				if(bound > 0){
-					bf_nodes[bound-1] = counter / d_nodes[bound-1];
+					bf_nodes[bound-1] = (float)counter / (float)d_nodes[bound-1];
 					printf("%f\n%u\t%u\t\t",bf_nodes[bound-1],bound, counter);
 				}else{
 					printf("%u\t%u\t\t",bound, counter);
@@ -65,14 +66,14 @@ class Node {
 			}
 
 			ruleid_iterator_t iter;
-			init_fwd_iter(&iter, &state);
+			init_fwd_iter(&iter, &this->state);
 			
 			while( (id = next_ruleid(&iter)) >= 0 ) {
 
 				if (!fwd_rule_valid_for_history(hist,id)) continue;
 				child_hist = next_fwd_history(hist,id);
 
-	        	apply_fwd_rule(id, &state, &child);
+	        	apply_fwd_rule(id, &this->state, &child);
 	        	Node aux = make_node(child,id);	 
 	        	counter += aux.bounded_search(d+1,bound,child_hist);
 			};
@@ -107,7 +108,7 @@ int main(int argc, char const *argv[]) {
 	ruleid_iterator_t iter;
 	init_fwd_iter(&iter, &state);
 	raiz = raiz.make_root_node(state);
-	raiz.iddfs(raiz.get_state(), cota);
+	raiz.iddfs(cota);
 
 	printf("\nProfundidad para la cual el número de nodos supera el número de estados: %u\n", dgtbf);
 
