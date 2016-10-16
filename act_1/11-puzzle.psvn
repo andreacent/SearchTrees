@@ -1,0 +1,48 @@
+# This file was created by genNpuzzle.cpp with the following command line parameters:
+# 4x3
+
+DOMAIN tile 12
+       1 2 3 4 5 6 7 8 9 10 11 b
+
+# a state is a vector of length 12
+12
+
+# All state variables have 12 possible values.
+tile tile tile tile tile tile tile tile tile tile tile tile 
+
+b X -  -  -  -  -  -  -  -  -  -  => X b -  -  -  -  -  -  -  -  -  -  LABEL RightAt0
+-  b X -  -  -  -  -  -  -  -  -  => -  X b -  -  -  -  -  -  -  -  -  LABEL RightAt1
+-  -  -  b X -  -  -  -  -  -  -  => -  -  -  X b -  -  -  -  -  -  -  LABEL RightAt3
+-  -  -  -  b X -  -  -  -  -  -  => -  -  -  -  X b -  -  -  -  -  -  LABEL RightAt4
+-  -  -  -  -  -  b X -  -  -  -  => -  -  -  -  -  -  X b -  -  -  -  LABEL RightAt6
+-  -  -  -  -  -  -  b X -  -  -  => -  -  -  -  -  -  -  X b -  -  -  LABEL RightAt7
+-  -  -  -  -  -  -  -  -  b X -  => -  -  -  -  -  -  -  -  -  X b -  LABEL RightAt9
+-  -  -  -  -  -  -  -  -  -  b X => -  -  -  -  -  -  -  -  -  -  X b LABEL RightAt10
+X b -  -  -  -  -  -  -  -  -  -  => b X -  -  -  -  -  -  -  -  -  -  LABEL LeftAt1
+-  X b -  -  -  -  -  -  -  -  -  => -  b X -  -  -  -  -  -  -  -  -  LABEL LeftAt2
+-  -  -  X b -  -  -  -  -  -  -  => -  -  -  b X -  -  -  -  -  -  -  LABEL LeftAt4
+-  -  -  -  X b -  -  -  -  -  -  => -  -  -  -  b X -  -  -  -  -  -  LABEL LeftAt5
+-  -  -  -  -  -  X b -  -  -  -  => -  -  -  -  -  -  b X -  -  -  -  LABEL LeftAt7
+-  -  -  -  -  -  -  X b -  -  -  => -  -  -  -  -  -  -  b X -  -  -  LABEL LeftAt8
+-  -  -  -  -  -  -  -  -  X b -  => -  -  -  -  -  -  -  -  -  b X -  LABEL LeftAt10
+-  -  -  -  -  -  -  -  -  -  X b => -  -  -  -  -  -  -  -  -  -  b X LABEL LeftAt11
+X -  -  b -  -  -  -  -  -  -  -  => b -  -  X -  -  -  -  -  -  -  -  LABEL UpAt3
+-  X -  -  b -  -  -  -  -  -  -  => -  b -  -  X -  -  -  -  -  -  -  LABEL UpAt4
+-  -  X -  -  b -  -  -  -  -  -  => -  -  b -  -  X -  -  -  -  -  -  LABEL UpAt5
+-  -  -  X -  -  b -  -  -  -  -  => -  -  -  b -  -  X -  -  -  -  -  LABEL UpAt6
+-  -  -  -  X -  -  b -  -  -  -  => -  -  -  -  b -  -  X -  -  -  -  LABEL UpAt7
+-  -  -  -  -  X -  -  b -  -  -  => -  -  -  -  -  b -  -  X -  -  -  LABEL UpAt8
+-  -  -  -  -  -  X -  -  b -  -  => -  -  -  -  -  -  b -  -  X -  -  LABEL UpAt9
+-  -  -  -  -  -  -  X -  -  b -  => -  -  -  -  -  -  -  b -  -  X -  LABEL UpAt10
+-  -  -  -  -  -  -  -  X -  -  b => -  -  -  -  -  -  -  -  b -  -  X LABEL UpAt11
+b -  -  X -  -  -  -  -  -  -  -  => X -  -  b -  -  -  -  -  -  -  -  LABEL DownAt0
+-  b -  -  X -  -  -  -  -  -  -  => -  X -  -  b -  -  -  -  -  -  -  LABEL DownAt1
+-  -  b -  -  X -  -  -  -  -  -  => -  -  X -  -  b -  -  -  -  -  -  LABEL DownAt2
+-  -  -  b -  -  X -  -  -  -  -  => -  -  -  X -  -  b -  -  -  -  -  LABEL DownAt3
+-  -  -  -  b -  -  X -  -  -  -  => -  -  -  -  X -  -  b -  -  -  -  LABEL DownAt4
+-  -  -  -  -  b -  -  X -  -  -  => -  -  -  -  -  X -  -  b -  -  -  LABEL DownAt5
+-  -  -  -  -  -  b -  -  X -  -  => -  -  -  -  -  -  X -  -  b -  -  LABEL DownAt6
+-  -  -  -  -  -  -  b -  -  X -  => -  -  -  -  -  -  -  X -  -  b -  LABEL DownAt7
+-  -  -  -  -  -  -  -  b -  -  X => -  -  -  -  -  -  -  -  X -  -  b LABEL DownAt8
+
+GOAL 1 2 3 4 5 6 7 8 9 10 11 b
