@@ -36,10 +36,10 @@ void puzzle_rule_right_cost(int r) {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }    
-        tstr1=tstr1+convertInt(0)+" ";  
+        tstr1=tstr1+"b ";  
         tstr2=tstr2+"X"+" ";
         tstr1=tstr1+"X"+" ";  
-        tstr2=tstr2+convertInt(0)+" ";
+        tstr2=tstr2+"b ";
         for (int i=r+2; i<N; i++)  
         {
             tstr1=tstr1+"-  ";
@@ -64,10 +64,10 @@ void puzzle_rule_left_cost(int r) {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }     
-        tstr2=tstr2+convertInt(0)+" ";
+        tstr2=tstr2+"b ";
         tstr2=tstr2+"X"+" ";
         tstr1=tstr1+"X"+" "; 
-        tstr1=tstr1+convertInt(0)+" ";  
+        tstr1=tstr1+"b ";  
         for (int i=r+1; i<N; i++)  
         {
             tstr1=tstr1+"-  ";
@@ -93,14 +93,14 @@ void puzzle_rule_up_cost(int r) {
             tstr2=tstr2+"-  ";
         }  
         tstr1=tstr1+"X"+" ";
-        tstr2=tstr2+convertInt(0)+" ";  
+        tstr2=tstr2+"b ";  
         for (int i=r-raiz+1; i<r; i++)  
         {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }    
         tstr2=tstr2+"X"+" ";  
-        tstr1=tstr1+convertInt(0)+" ";
+        tstr1=tstr1+"b ";
         for (int i=r+1; i<N; i++)  
         {
             tstr1=tstr1+"-  ";
@@ -127,7 +127,7 @@ void puzzle_rule_down_cost(int r) {
             tstr1=tstr1+"-  ";
             tstr2=tstr2+"-  ";
         }  
-        tstr1=tstr1+convertInt(0)+" ";  
+        tstr1=tstr1+"b ";  
         tstr2=tstr2+"X"+" ";
         for (int i=r+1; i<r+raiz; i++)  
         {
@@ -135,7 +135,7 @@ void puzzle_rule_down_cost(int r) {
             tstr2=tstr2+"-  ";
         }    
         tstr1=tstr1+"X"+" ";  
-        tstr2=tstr2+convertInt(0)+" ";
+        tstr2=tstr2+"b ";
         for (int i=r+raiz+1; i<N; i++)  
         {
             tstr1=tstr1+"-  ";
@@ -211,20 +211,24 @@ int main(int argc, char *argv[])
 
 /******* CREATE THE PSVN FILE ************/
 
-    cout << "# This file was created by genNpuzzle.cpp with the following command line parameters:\n#";
-    for (int i=1; i<argc; ++i) {
-        cout << "  " << argv[i] ;
-    }
-    cout << "\n\n# number of state variables = the number of tokens" << endl;
+    cout << "# This file was created by genNpuzzle.cpp with the following command line parameters:\n# ";
+
+    raiz = sqrt(N);
+    cout << convertInt(N/raiz) << "x" << convertInt(raiz) << endl;
+
+    cout << "\nDOMAIN tile " << convertInt(N) << endl;
+    cout << "      ";
+    for (int i=1;i<N;i++)  { cout << " " << convertInt(i); };
+    cout << " b";  
+
+    cout << "\n\n# a state is a vector of length " << convertInt(N) << endl;
     cout << convertInt(N) << endl;
 
     string Nstring = convertInt(N);
     cout << "\n# All state variables have "  << Nstring << " possible values."<< endl;
-    for (int i=0;i<N;i++)  { cout << " " << Nstring; }
+    for (int i=0;i<N;i++)  { cout << "tile " ; }; 
 
     cout << "\n\n";
-
-    raiz = sqrt(N);
 
     for (int r=0; r<N; r++)  
     {
@@ -251,7 +255,7 @@ int main(int argc, char *argv[])
     {
         cout << convertInt(i+1) << " ";
     }
-    cout << convertInt(0) << " ";
+    cout << "b";
     cout << endl;
 
     return (EXIT_SUCCESS);
