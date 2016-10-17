@@ -10,7 +10,7 @@ Depth	Nodos		Factor
 3	12167		23.000000
 4	279841		23.000000
 5	6436343		23.000000
-6	148035889		
+6	148035889		23.000000
 Número de estados (NdE): 23
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -23,7 +23,7 @@ Depth	Nodos		Factor
 3	11132		22.000000
 4	244904		22.000000
 5	5387888		22.000000
-6	118533536		
+6	118533536		22.000000
 Número de estados (NdE): 23
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -36,7 +36,7 @@ Depth	Nodos		Factor
 3	11131		21.998024
 4	244860		21.998028
 5	5386437		21.998028
-6	118490988		
+6	118490988		21.998026
 Número de estados (NdE): 23
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -52,7 +52,7 @@ Depth	Nodos		Factor
 3	19683		27.000000
 4	531441		27.000000
 5	14348907		27.000000
-6	387420489		
+6	387420489		4.827878
 Número de estados (NdE): 27
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -65,7 +65,7 @@ Depth	Nodos		Factor
 3	18252		26.000000
 4	474552		26.000000
 5	12338352		26.000000
-6	320797152		
+6	320797152		12.611579
 Número de estados (NdE): 27
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -78,7 +78,7 @@ Depth	Nodos		Factor
 3	18251		25.998575
 4	474500		25.998577
 5	12336325		25.998579
-6	320726900		
+6	320726900		12.607223
 Número de estados (NdE): 27
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -95,7 +95,7 @@ Depth	Nodos		Factor
 4	234256		22.000000
 5	5153632		22.000000
 6	113379904		22.000002
-7	2494357888		
+7	2494357888		1.337525
 Número de estados (NdE): 22
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -109,7 +109,7 @@ Depth	Nodos		Factor
 4	34917		10.282784
 5	359044		10.265965
 6	3685933		10.286698
-7	37916082		
+7	37916082		10.302634
 Número de estados (NdE): 22
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -123,7 +123,7 @@ Depth	Nodos		Factor
 4	31696		9.333607
 5	295838		9.162322
 6	2710563		9.127989
-7	24741989		
+7	24741989		9.144390
 Número de estados (NdE): 22
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -140,7 +140,7 @@ Depth	Nodos		Factor
 4	456976		26.000000
 5	11881376		26.000000
 6	308915776		12.096640
-7	3736842880		
+7	3736842880		0.714141
 Número de estados (NdE): 26
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -154,7 +154,7 @@ Depth	Nodos		Factor
 4	57614		11.102475
 5	639658		11.067207
 6	7079228		11.111684
-7	78662142		
+7	78662142		11.151416
 Número de estados (NdE): 26
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -168,7 +168,7 @@ Depth	Nodos		Factor
 4	52753		10.047884
 5	530056		9.757697
 6	5172126		9.680469
-7	50068605		
+7	50068605		9.702580
 Número de estados (NdE): 26
 Profundidad para la cual el número de nodos supera el NdE: 2
 
@@ -198,7 +198,7 @@ Depth	Nodos		Factor
 17	154786173		3.032107
 18	469328199		3.032342
 19	1423163575		0.014283
-20	20326955		
+20	20326955		9.854966
 Número de estados (NdE): 34
 Profundidad para la cual el número de nodos supera el NdE: 4
 
@@ -225,7 +225,7 @@ Depth	Nodos		Factor
 17	119105		1.924974
 18	229274		1.931671
 19	442882		1.933235
-20	856195		
+20	856195		1.929660
 Número de estados (NdE): 34
 Profundidad para la cual el número de nodos supera el NdE: 5
 
@@ -252,7 +252,7 @@ Depth	Nodos		Factor
 17	119105		1.924974
 18	229274		1.931671
 19	442882		1.933235
-20	856195		
+20	856195		1.929660
 Número de estados (NdE): 34
 Profundidad para la cual el número de nodos supera el NdE: 5
 
@@ -274,7 +274,7 @@ Depth	Nodos		Factor
 9	1978341		5.641695
 10	11161197		5.670275
 11	63287061		5.694406
-12	360382215		
+12	360382215		5.715302
 Número de estados (NdE): 168
 Profundidad para la cual el número de nodos supera el NdE: 4
 
@@ -293,7 +293,7 @@ Depth	Nodos		Factor
 9	1010517		5.120170
 10	5174019		5.147038
 11	26630877		5.169660
-12	137672583		
+12	137672583		5.189146
 Número de estados (NdE): 168
 Profundidad para la cual el número de nodos supera el NdE: 4
 
@@ -315,7 +315,7 @@ Depth	Nodos		Factor
 9	1978341		5.641695
 10	11161197		5.670275
 11	63287061		5.694406
-12	360382215		
+12	360382215		5.715302
 Número de estados (NdE): 192
 Profundidad para la cual el número de nodos supera el NdE: 4
 
@@ -334,6 +334,6 @@ Depth	Nodos		Factor
 9	1010517		5.120170
 10	5174019		5.147038
 11	26630877		5.169660
-12	137672583		
+12	137672583		5.189146
 Número de estados (NdE): 192
 Profundidad para la cual el número de nodos supera el NdE: 4
