@@ -8,6 +8,8 @@ CXX = g++
 OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable
 
 PSVNOPT0 = --state_map --no_backwards_moves --fwd_history_len=0 --keep_duplicate_rules
+PSVNOPT1 = --state_map --no_backwards_moves --fwd_history_len=1 --remove_duplicate_rules
+PSVNOPT2 = --state_map --no_backwards_moves --fwd_history_len=2 --remove_duplicate_rules
 
 psvn2c_core.c:
 	cp ../src/psvn2c_core.c ./psvn2c_core.c
@@ -22,16 +24,27 @@ psvn2c_abstraction.c:
 	../bin/psvn2c $(PSVNOPT0) --name=$(*F) < $< > $@
 	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
 
+%n1: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
+	../bin/psvn2c $(PSVNOPT1) --name=$(*F) < $< > $@
+	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
+
+%n2: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
+	../bin/psvn2c $(PSVNOPT2) --name=$(*F) < $< > $@
+	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
+
 .PRECIOUS: %.c
 
-#actividad 3
-%.act3: %.c ../algorithms/actividad3.cpp
+# N = 0
+%.act0: %.c ../algorithms/actividad3.cpp
 	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
-
-#actividad 1_2
-%.act1: %.c ../algorithms/actividad1.cpp
-	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+# N = 1
+%.act1: %n1 ../algorithms/actividad3.cpp
+	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+# N = 2
+%.act2: %n2 ../algorithms/actividad3.cpp
+	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
 .PHONY: clean

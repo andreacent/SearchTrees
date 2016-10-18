@@ -1,28 +1,12 @@
 #!/bin/sh
 
 if [ $1 -eq 0 ]; then
-	# PANCAKE
-	make pancake24.act0
-	make pancake24.act1
-	make pancake24.act2
-
-	make pancake28.act0
-	make pancake28.act1
-	make pancake28.act2
-
-	# TOPSPIN
-	make topSpin22-4.act0
-	make topSpin22-4.act1
-	make topSpin22-4.act2
-
-	make topSpin26-4.act0
-	make topSpin26-4.act1
-	make topSpin26-4.act2
-
-	# 11puzzle
-	make 11puzzle.act0
-	make 11puzzle.act1
-	make 11puzzle.act2
+	for x in pancake24 pancake28 topSpin22-4 topSpin26-4 11puzzle; do
+		# PANCAKE
+		make $x.act0
+		make $x.act1
+		make $x.act2
+	done 
 
 	# HANOI
 	make hanoi-14-4.act0
