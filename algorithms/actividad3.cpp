@@ -11,87 +11,11 @@ double t_final;
 unsigned nodes=0;
 int cost=0;
 
-/*
-class Node {
-	state_t state;
-	Node* father;
-	int ruleid;
-	unsigned g;
-
-	public:
-		// Constructores de Nodos.
-		Node(){};
-
-		Node(state_t s, Node* p, int action, unsigned gcost): state(s), father(p), ruleid(action), g(gcost){};
-
-		Node make_node(state_t state, int action){
-			return Node(state, this, action, g + get_fwd_rule_cost(action));
-		};
-
-		//  Función que implementa el algoritmo de búsqueda en profundidad iterativa
-		//	Adicionalemente se imprime la tabla de resultados. 
-
-		Node iddfs(state_t state){
-			std::clock_t start;
-			unsigned bound = 0;
-
-			start = std::clock();
-
-			Node root = Node(state, NULL, -1, 0);
-
-			//Profundidad > 0
-			while(!goal) {
-				root.bounded_search(0, bound);				
-				bound++;
-				//nodes=0;
-			};
-
-			t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-			printf("%d, %d, %f, %.10e\n",cost,nodes,t_final,nodes/t_final);			
-
-			return root;
-		};
-		
-		//  Función que implementa la llamada recursiva del iddfs
-		//	En caso de encontrarse en la profundidad deseada se retorna 1 ya que
-		//	corresponde a la presencia de un nodo en esa profundidad. 
-		//	En caso contrario, retorna 0.
-
-		void bounded_search(unsigned d, unsigned bound){
-			int ruleid;
-			state_t child;
-			ruleid_iterator_t iter;
-
-			if(is_goal(&state)) {
-				goal = true;
-				nodes++;
-				return;
-			} 
-
-			if (d>=bound){ 
-				nodes++;
-				return;
-			}
-	
-			init_fwd_iter(&iter, &state);   
-			while( (ruleid = next_ruleid(&iter)) >= 0 && !goal) {
-				apply_fwd_rule(ruleid, &state, &child);
-				Node aux = make_node(child,ruleid);  
-				aux.bounded_search(d+1,bound);
-				if(goal) cost += get_fwd_rule_cost(ruleid);
-			};
-		};
-
-		state_t get_state(){
-			return this->state;
-		};
-};
-*/
+//No hay estructura nodo porque no es necesario almacenar el arbol
 		
 //  Función que implementa la llamada recursiva del iddfs
-//	En caso de encontrarse en la profundidad deseada se retorna 1 ya que
-//	corresponde a la presencia de un nodo en esa profundidad. 
-//	En caso contrario, retorna 0.
+//	En caso de encontrarse en la profundidad deseada o con el estado 
+//  goal, se retorna
 
 void bounded_search(unsigned d, unsigned bound,state_t state){
 	int ruleid;
@@ -118,7 +42,7 @@ void bounded_search(unsigned d, unsigned bound,state_t state){
 };
 
 //  Función que implementa el algoritmo de búsqueda en profundidad iterativa
-//	Adicionalemente se imprime la tabla de resultados. 
+//	Adicionalemente se imprimen los resultados. 
 
 void iddfs(state_t state){
 	std::clock_t start;
@@ -130,7 +54,7 @@ void iddfs(state_t state){
 	while(!goal) {
 		bounded_search(0, bound,state);				
 		bound++;
-	
+		//nodes=0; no se si debe imprimir todos los nodos de todas las iteraciones o solo el de la iteracion que halla el goal
 	};
 
 	t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
@@ -152,12 +76,14 @@ int main(int argc, char const *argv[]) {
 		read_state(line.c_str(), &state);
 		print_state(stdout, &state);
 		printf("\", ");
+		//ejecuta iddfs
 		iddfs(state);
+		//devuelve las variables a sus estados iniciales
 		goal = false;
 		nodes=0;
 		cost=0;
 
-		break; 
+		break; //este break no va, pero hasta que no se ponga el timer de 10min no se puede quitar
 	}
 
 	return 0;
