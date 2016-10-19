@@ -66,4 +66,4 @@ psvn2c_abstraction.c:
 
 .PHONY: clean
 clean:
-	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
+	rm -fr *.succ *.dfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
