@@ -14,14 +14,12 @@ unsigned counter = 0;
 	corresponde a la presencia de un nodo en esa profundidad. 
 	En caso contrario, retorna 0.*/
 
-int bounded_search(unsigned d,unsigned bound,int hist,state_t state){
+void bounded_search(unsigned d,unsigned bound,int hist,state_t state){
 	int id,child_hist;
 	state_t child;
 	ruleid_iterator_t iter;
 
-	if (d>=bound) {
-		return 1;
-	}
+	if (d>bound) return;
 
 	init_fwd_iter(&iter, &state);   
 	while( (id = next_ruleid(&iter)) >= 0 ) {
@@ -30,31 +28,24 @@ int bounded_search(unsigned d,unsigned bound,int hist,state_t state){
 		child_hist = next_fwd_history(hist,id);
 
 		apply_fwd_rule(id, &state, &child);
-		counter += bounded_search(d+1,bound,child_hist,child);
+		bounded_search(d+1,bound,child_hist,child);
+		d_nodes[d+1]++;
 	};
-	return 0;
 };
 
-void iddfs(state_t state,unsigned cota){
+void dfs(state_t state,unsigned cota){
 	int hist = init_history; 
-	unsigned bound = 1;
+
 	printf("%s \n","Depth\tNodos\t\tFactor");
-
 	printf("%u\t%u\t\t",0, 1);
-	d_nodes[0] = 1;
 
-	//Profundidad > 0
-	while (bound <= cota) {
-		bounded_search(0, bound,hist,state);
+	d_nodes[0]=1;
+	bounded_search(0,cota,hist,state);	
 
-		//Imprime numero de nodos y factor de ramificacion
-		bf_nodes[bound-1] = (float)counter / (float)d_nodes[bound-1];
-		printf("%f\n%u\t%u\t\t",bf_nodes[bound-1],bound, counter);  
-		d_nodes[bound] = counter;
-		
-		bound++;
-		counter = 0;
-	};
+	for(int i=1; i<=(int)cota;i++){
+		bf_nodes[i-1] = (float)d_nodes[i] / (float)d_nodes[i-1];
+		printf("%f\n%u\t%u\t\t",bf_nodes[i-1],i, d_nodes[i]); 	
+	}
 };
 
 int main(int argc, char const *argv[]) {
@@ -62,6 +53,10 @@ int main(int argc, char const *argv[]) {
     ssize_t nchars;
 	state_t state;
 	unsigned cota = atoi(argv[1]);
+
+	for(int i=1; i<=(int)cota;i++){
+		d_nodes[i] =0;
+	}
 
 	// READ A LINE OF INPUT FROM stdin
 	printf("Please enter a state followed by ENTER: ");
@@ -79,15 +74,14 @@ int main(int argc, char const *argv[]) {
 	print_state(stdout, &state);
 	printf("\n");
 
-	iddfs(state,cota);
+	dfs(state,cota);
 
 	printf("\nNúmero de estados (NdE): %u\n", num_fwd_rules);
 	for(int i=0; i<=(int)cota;i++){
 		if(num_fwd_rules < d_nodes[i]) {
 			printf("Profundidad para la cual el número de nodos supera el NdE: %u\n", i);
 			break;
-		}
-			
+		}	
 	}
 
 	return 0;

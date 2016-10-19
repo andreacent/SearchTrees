@@ -50,21 +50,17 @@ psvn2c_abstraction.c:
 	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
-
-%.iddfs: %.c ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
-	rm -f $*.c
 # N = 0
-%.iddfs0: %.c ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.dfs0: %.c ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
-%.iddfs1: %n1 ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.dfs1: %n1 ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 2
-%.iddfs2: %n2 ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.dfs2: %n2 ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
 

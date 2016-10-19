@@ -64,7 +64,7 @@ void iddfs(state_t state){
 
 	t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
 
-	printf("%d, %d, %f, %.10e\n",cost,nodes,t_final,nodes/t_final);			
+	printf("%d, %u, %f, %.10e\n",cost,nodes,t_final,nodes/t_final);			
 };
 
 // Obtiene el nombre del archivo que se esta ejecutando
