@@ -45,4 +45,4 @@ b -  -  X -  -  -  -  -  -  -  -  => X -  -  b -  -  -  -  -  -  -  -  LABEL Dow
 -  -  -  -  -  -  -  b -  -  X -  => -  -  -  -  -  -  -  X -  -  b -  LABEL DownAt7
 -  -  -  -  -  -  -  -  b -  -  X => -  -  -  -  -  -  -  -  X -  -  b LABEL DownAt8
 
-GOAL 1 2 3 4 5 6 7 8 9 10 11 b
+GOAL b 1 2 3 4 5 6 7 8 9 10 11 

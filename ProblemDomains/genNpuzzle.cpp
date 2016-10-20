@@ -250,12 +250,11 @@ int main(int argc, char *argv[])
     cout << endl;
 
 /* In this encoding there are N different goal states, all the cyclic permutations of 0...(N-1) */    
-    cout << "GOAL " ;
+    cout << "GOAL b " ;
     for (int i=0;i<N-1;i++)
     {
         cout << convertInt(i+1) << " ";
     }
-    cout << "b";
     cout << endl;
 
     return (EXIT_SUCCESS);
