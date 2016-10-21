@@ -1,0 +1,60 @@
+# This file was created by the abstractor program.
+# The source PSVN file was: 15puzzle_korf.psvn
+# The abstraction used is stored in file: 15puzzle_korf_abs3.abst
+
+DOMAIN TILE 16
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 B
+
+16
+TILE TILE TILE TILE TILE TILE TILE TILE TILE TILE 1 1 1 1 1 1
+
+B X - - - - - - - - - - - - - - => X B - - - - - - - - - - - - - - LABEL RIGHTAT0 COST 1
+- B X - - - - - - - - - - - - - => - X B - - - - - - - - - - - - - LABEL RIGHTAT1 COST 1
+- - B X - - - - - - - - - - - - => - - X B - - - - - - - - - - - - LABEL RIGHTAT2 COST 1
+- - - - B X - - - - - - - - - - => - - - - X B - - - - - - - - - - LABEL RIGHTAT4 COST 1
+- - - - - B X - - - - - - - - - => - - - - - X B - - - - - - - - - LABEL RIGHTAT5 COST 1
+- - - - - - B X - - - - - - - - => - - - - - - X B - - - - - - - - LABEL RIGHTAT6 COST 1
+- - - - - - - - B X - - - - - - => - - - - - - - - X B - - - - - - LABEL RIGHTAT8 COST 1
+- - - - - - - - - B - - - - - - => - - - - - - - - - X - - - - - - LABEL RIGHTAT9 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHTAT10 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHTAT12 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHTAT13 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL RIGHTAT14 COST 1
+X B - - - - - - - - - - - - - - => B X - - - - - - - - - - - - - - LABEL LEFTAT1 COST 1
+- X B - - - - - - - - - - - - - => - B X - - - - - - - - - - - - - LABEL LEFTAT2 COST 1
+- - X B - - - - - - - - - - - - => - - B X - - - - - - - - - - - - LABEL LEFTAT3 COST 1
+- - - - X B - - - - - - - - - - => - - - - B X - - - - - - - - - - LABEL LEFTAT5 COST 1
+- - - - - X B - - - - - - - - - => - - - - - B X - - - - - - - - - LABEL LEFTAT6 COST 1
+- - - - - - X B - - - - - - - - => - - - - - - B X - - - - - - - - LABEL LEFTAT7 COST 1
+- - - - - - - - X B - - - - - - => - - - - - - - - B X - - - - - - LABEL LEFTAT9 COST 1
+- - - - - - - - - X - - - - - - => - - - - - - - - - B - - - - - - LABEL LEFTAT10 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFTAT11 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFTAT13 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFTAT14 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL LEFTAT15 COST 1
+X - - - B - - - - - - - - - - - => B - - - X - - - - - - - - - - - LABEL UPAT4 COST 1
+- X - - - B - - - - - - - - - - => - B - - - X - - - - - - - - - - LABEL UPAT5 COST 1
+- - X - - - B - - - - - - - - - => - - B - - - X - - - - - - - - - LABEL UPAT6 COST 1
+- - - X - - - B - - - - - - - - => - - - B - - - X - - - - - - - - LABEL UPAT7 COST 1
+- - - - X - - - B - - - - - - - => - - - - B - - - X - - - - - - - LABEL UPAT8 COST 1
+- - - - - X - - - B - - - - - - => - - - - - B - - - X - - - - - - LABEL UPAT9 COST 1
+- - - - - - X - - - - - - - - - => - - - - - - B - - - - - - - - - LABEL UPAT10 COST 1
+- - - - - - - X - - - - - - - - => - - - - - - - B - - - - - - - - LABEL UPAT11 COST 1
+- - - - - - - - X - - - - - - - => - - - - - - - - B - - - - - - - LABEL UPAT12 COST 1
+- - - - - - - - - X - - - - - - => - - - - - - - - - B - - - - - - LABEL UPAT13 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UPAT14 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL UPAT15 COST 1
+B - - - X - - - - - - - - - - - => X - - - B - - - - - - - - - - - LABEL DOWNAT0 COST 1
+- B - - - X - - - - - - - - - - => - X - - - B - - - - - - - - - - LABEL DOWNAT1 COST 1
+- - B - - - X - - - - - - - - - => - - X - - - B - - - - - - - - - LABEL DOWNAT2 COST 1
+- - - B - - - X - - - - - - - - => - - - X - - - B - - - - - - - - LABEL DOWNAT3 COST 1
+- - - - B - - - X - - - - - - - => - - - - X - - - B - - - - - - - LABEL DOWNAT4 COST 1
+- - - - - B - - - X - - - - - - => - - - - - X - - - B - - - - - - LABEL DOWNAT5 COST 1
+- - - - - - B - - - - - - - - - => - - - - - - X - - - - - - - - - LABEL DOWNAT6 COST 1
+- - - - - - - B - - - - - - - - => - - - - - - - X - - - - - - - - LABEL DOWNAT7 COST 1
+- - - - - - - - B - - - - - - - => - - - - - - - - X - - - - - - - LABEL DOWNAT8 COST 1
+- - - - - - - - - B - - - - - - => - - - - - - - - - X - - - - - - LABEL DOWNAT9 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWNAT10 COST 1
+- - - - - - - - - - - - - - - - => - - - - - - - - - - - - - - - - LABEL DOWNAT11 COST 1
+
+GOAL B 1 2 3 4 5 6 7 8 9 - - - - - -

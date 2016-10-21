@@ -40,8 +40,8 @@ psvn2c_abstraction.c:
 %.a_estrella: %.c ../algorithms/a_estrella.cpp
 	$(CXX) $(OPT) ../algorithms/a_estrella.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
-%.a_estrella_m: %.c ../algorithms/a_estrella_m.cpp
-	$(CXX) $(OPT) ../algorithms/a_estrella_m.cpp -std=gnu++0x -include $< -o $@
+%.a_est: %.c ../algorithms/a_estrella_b.cpp
+	$(CXX) $(OPT) ../algorithms/a_estrella_b.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 %.ida_estrella: %.c ../algorithms/ida_estrella.cpp
 	$(CXX) $(OPT) ../algorithms/ida_estrella.cpp -std=gnu++0x -include $< -o $@
@@ -61,22 +61,27 @@ psvn2c_abstraction.c:
 	rm -f $*.c
 
 
-%.iddfs: %.c ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.iddfs: %.c ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 0
-%.iddfs0: %.c ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.iddfs0: %.c ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
-%.iddfs1: %n1 ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.iddfs1: %n1 ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 2
-%.iddfs2: %n2 ../algorithms/iddfs_arbol_implicito.cpp
-	$(CXX) $(OPT) ../algorithms/iddfs_arbol_implicito.cpp -std=gnu++0x -include $< -o $@
+%.iddfs2: %n2 ../algorithms/dfs.cpp
+	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+
+# N = 0
+%.gap: %.c ../algorithms/gap.cpp
+	$(CXX) $(OPT) ../algorithms/gap.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
 .PHONY: clean
 clean:
-	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
+	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~ *.a_estrella*

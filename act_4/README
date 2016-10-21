@@ -1,0 +1,9 @@
+Ejemplo:
+
+Pancake con a*:
+	./act.sh pancake28 1
+
+	o
+
+	make pancake28.a_estrella 
+	pancake28.a_estrella ../instances/pancake28.txt 1
