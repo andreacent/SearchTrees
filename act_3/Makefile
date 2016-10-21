@@ -35,16 +35,16 @@ psvn2c_abstraction.c:
 .PRECIOUS: %.c
 
 # N = 0
-%.act0: %.c ../algorithms/actividad3.cpp
-	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
+%.act0: %.c ../algorithms/iddfs.cpp
+	$(CXX) $(OPT) ../algorithms/iddfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
-%.act1: %n1 ../algorithms/actividad3.cpp
-	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
+%.act1: %n1 ../algorithms/iddfs.cpp
+	$(CXX) $(OPT) ../algorithms/iddfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 2
-%.act2: %n2 ../algorithms/actividad3.cpp
-	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
+%.act2: %n2 ../algorithms/iddfs.cpp
+	$(CXX) $(OPT) ../algorithms/iddfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
 .PHONY: clean

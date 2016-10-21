@@ -101,7 +101,7 @@ class Node {
             int h0 = this->heuristica(idh);
             start = std::clock();
 
-            std::cout<<start<<"\n";
+            //std::cout<<start<<"\n";
 
             cola.push(*this);
             while(!cola.empty()){
@@ -119,10 +119,11 @@ class Node {
                     if (is_goal(&n.state)){
                         respuesta.first = n.g;
                         respuesta.second = contador;
-                        std:: cout <<  std::clock() - start << "\n";
+                        //std::cout <<  std::clock() - start ;
                         t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
 
-                        std::cout<<respuesta.first<<"\t"<<h0<<"\t"<<respuesta.second<<"\t"<<t_final<<"\t"<<respuesta.second/t_final;
+                        std::cout<<respuesta.first<<","<<h0<<","<<respuesta.second<<","<<t_final<<","<<respuesta.second/t_final;
+                        printf("\n");
                         return respuesta;       
                     }
                     init_fwd_iter(&iter, &n.state);
@@ -139,7 +140,7 @@ class Node {
             i++;    
         };
         t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-        std::cout<<"na"<<"\t"<<h0<<"\t"<<respuesta.second<<"\t"<<t_final<<"\t"<<respuesta.second/t_final;
+        std::cout<<"na"<<","<<h0<<","<<respuesta.second<<","<<t_final<<","<<respuesta.second/t_final;
         respuesta.first = -1;
         respuesta.second = -1;
         return respuesta;
@@ -163,7 +164,7 @@ int main(int argc, char const *argv[]) {
     std::fstream fd;
     std::string linea;
     
-    printf("%s \n","grupo,\t algorithm,\t heuristic,\t domain,\t instance,\t cost,\t h0,\t generated,\t time,\t gen_per_sec" );
+    printf("%s \n","grupo, algorithm, heuristic, domain, instance, cost, h0, generated, time, gen_per_sec" );
     fd.open(argv[1]);
     if (fd.is_open()) {
         while(getline (fd,linea)){
@@ -171,35 +172,13 @@ int main(int argc, char const *argv[]) {
             read_state(linea.c_str(), &state);
             Node raiz;
             raiz = raiz.make_root_node(state);
-            printf("%s \n",linea.c_str());
+            printf("X, a*, " );
+            if(idh==1) printf("gap, pancake28, " );
+            else printf("manhattan, 15-puzzle, " );
+            printf("\"%s\", ",linea.c_str());
             respuesta = raiz.a_estrella(idh);
         }
     }
-
-    /*
-    };
-    printf("The state you entered is: ");
-    print_state(stdout, &state);
-    printf("\n");
-    
-    // READ A LINE OF INPUT FROM stdin
-    printf("Please enter a state followed by ENTER: ");
-    if( fgets(str, sizeof str, stdin) == NULL ) {
-        printf("Error: empty input line.\n");
-        return 0; 
-    };
-
-    read_state(str, &state);
-
-    
-    Node raiz;
-    raiz = raiz.make_root_node(state);
-    respuesta = raiz.a_estrella(idh);
-
-    printf("%s\n", "Costo al goal:");
-    printf("%u\n",respuesta.first);
-    printf("%u\n",respuesta.second);
-*/
     
     return 0;
 }
