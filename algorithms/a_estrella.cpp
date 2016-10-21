@@ -123,8 +123,6 @@ class Node {
                         t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
 
                         std::cout<<respuesta.first<<"\t"<<h0<<"\t"<<respuesta.second<<"\t"<<t_final<<"\t"<<respuesta.second/t_final;
-//                        printf("%d\t %d\t %d\t %f\t %.10e \n",respuesta.first,h0,respuesta.second,t_final,respuesta.second/t_final);
-                        exit(1);
                         return respuesta;       
                     }
                     init_fwd_iter(&iter, &n.state);
