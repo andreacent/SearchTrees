@@ -102,7 +102,7 @@ class Node {
             start = std::clock();
 
             std::cout<<start<<"\n";
-            //exit(1);
+
             cola.push(*this);
             while(!cola.empty()){
                if ( ((std::clock() - start)/CLOCKS_PER_SEC) == 600) {
