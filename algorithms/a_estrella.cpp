@@ -46,10 +46,10 @@ class Node {
             return Node(state, NULL, -1, 0.0, 0.0);
         };
 
-        float heuristica(int n){
-            if (n == 0){
+        int heuristica(int n){
+            if (n == 1){
                 return this->gap();
-            } else if (n == 1){
+            } else if (n == 2){
                 return this->manhattan();
             } else {
                 std::cout<<"Ingrese 1 para usar heuristica gap, 2 para usar manhattan \n";
@@ -72,14 +72,11 @@ class Node {
             return this->g + peso*numero;
         };
 
-        float manhattan(){
+        int manhattan(){
             float h = 0;
             for(int i = 0; i < 16; i++){
-                printf("%s \n","PRE FOR \n" );
-                printf("%f \n",h);
                 h += tabla[this->state.vars[i]][i];
             }
-            printf("%s\n","POST FOR \n" );
             return this->g + h*peso;
         };
         
@@ -101,15 +98,17 @@ class Node {
             state_t child;
             ruleid_iterator_t iter;
             std::pair<float,int> respuesta;
-            float h0 = this->heuristica(idh);
-
-            printf("%s \n","AQUI");
-
-
+            int h0 = this->heuristica(idh);
             start = std::clock();
+
+            std::cout<<start<<"\n";
 
             cola.push(*this);
             while(!cola.empty()){
+               if ( ((std::clock() - start)/CLOCKS_PER_SEC) == 600) {
+                   std::cout<<"entre aca \n";
+                   break; 
+                }
                 Node n;
                 n = cola.top();
                 cola.pop();
@@ -118,11 +117,12 @@ class Node {
                     state_map_add(&mapa, &n.state, n.g);
                     
                     if (is_goal(&n.state)){
-                        
                         respuesta.first = n.g;
                         respuesta.second = contador;
+                        std:: cout <<  std::clock() - start << "\n";
                         t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-                        printf("%d\t %f\t %d\t %f\t %.10e \n",respuesta.first,h0,respuesta.second,t_final,respuesta.second/t_final);
+
+                        std::cout<<respuesta.first<<"\t"<<h0<<"\t"<<respuesta.second<<"\t"<<t_final<<"\t"<<respuesta.second/t_final;
                         return respuesta;       
                     }
                     init_fwd_iter(&iter, &n.state);
@@ -139,7 +139,7 @@ class Node {
             i++;    
         };
         t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-        printf("%s, %f, %d, %d, %.10e \n","na",h0,respuesta.second,t_final,respuesta.second/t_final);
+        std::cout<<"na"<<"\t"<<h0<<"\t"<<respuesta.second<<"\t"<<t_final<<"\t"<<respuesta.second/t_final;
         respuesta.first = -1;
         respuesta.second = -1;
         return respuesta;
