@@ -8,8 +8,6 @@ using namespace std;
 bool goal;
 unsigned nodes=0;
 int cost=0;
-
-//  No hay estructura nodo porque no es necesario almacenar el arbol
 		
 //  Función que implementa la llamada recursiva del iddfs
 //	En caso de encontrarse en la profundidad deseada o con el estado 

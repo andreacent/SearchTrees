@@ -1,0 +1,11 @@
+EL algoritmo usado para las actividades 1 y 2 fue DFS. 
+
+Resultados de la actividad 1: act_1.txt 
+Resultados de la actividad 2: act_2.txt
+
+Hay tres formas de compilar dfs0, dfs1 y dfs2 para fwd_history_len=0, fwd_history_len=1 y fwd_history_len=2 respectivamente.
+
+Ejemplo:
+
+make pancake24.dfs0 
+./pancake24.dfs0 6 
