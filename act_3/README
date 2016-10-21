@@ -1,0 +1,9 @@
+EL algoritmo usado para la actividad 3 fue Iterative Deepening DFS. 
+
+Se usó eliminación de duplicados con N=1, menos para el problema topspin16-4 que se usó N=2.
+
+Se creó un script para evitar que el algoritmo tardara más de 10 minutos con cada instancia.
+
+Ejemplo:
+
+./act.sh 11puzzle

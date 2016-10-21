@@ -34,36 +34,19 @@ psvn2c_abstraction.c:
 
 .PRECIOUS: %.c
 
-%.actividad1: %.c ../algorithms/actividad1.cpp
-	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
-	rm -f $*.c
 # N = 0
-%.act0: %.c ../algorithms/actividad1.cpp
-	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+%.act0: %.c ../algorithms/actividad3.cpp
+	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 1
-%.act1: %n1 ../algorithms/actividad1.cpp
-	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+%.act1: %n1 ../algorithms/actividad3.cpp
+	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 # N = 2
-%.act2: %n2 ../algorithms/actividad1.cpp
-	$(CXX) $(OPT) ../algorithms/actividad1.cpp -std=gnu++0x -include $< -o $@
+%.act2: %n2 ../algorithms/actividad3.cpp
+	$(CXX) $(OPT) ../algorithms/actividad3.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
-
-# N = 0
-%.dfs0: %.c ../algorithms/dfs.cpp
-	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
-	rm -f $*.c
-# N = 1
-%.dfs1: %n1 ../algorithms/dfs.cpp
-	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
-	rm -f $*.c
-# N = 2
-%.dfs2: %n2 ../algorithms/dfs.cpp
-	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
-	rm -f $*.c
-
 
 .PHONY: clean
 clean:
-	rm -fr *.succ *.dfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
+	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~
