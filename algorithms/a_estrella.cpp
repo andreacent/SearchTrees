@@ -22,7 +22,6 @@ unsigned tabla12[16] = {3,4,5,6,2,3,4,5,1,2,3,4,0,1,2,3};
 unsigned tabla13[16] = {4,3,4,5,3,2,3,4,2,1,2,3,1,0,1,2};
 unsigned tabla14[16] = {5,4,3,4,4,3,2,3,3,2,1,2,2,1,0,1};
 unsigned tabla15[16] = {6,5,4,3,5,4,3,2,4,3,2,1,3,2,1,0};
-float peso;
 
 unsigned* tabla[16] = {tabla0,tabla1,tabla2,tabla3,tabla4,tabla5,tabla6,tabla7,tabla8,tabla9,tabla10,tabla11,tabla12,tabla13,tabla14,tabla15};
 
@@ -69,7 +68,7 @@ class Node {
                 }
             };
             if(this->state.vars[27]!=27){numero++;};
-            return this->g + peso*numero;
+            return this->g + numero;
         };
 
         int manhattan(){
@@ -77,7 +76,7 @@ class Node {
             for(int i = 0; i < 16; i++){
                 h += tabla[this->state.vars[i]][i];
             }
-            return this->g + h*peso;
+            return this->g + h;
         };
         
         bool operator<(Node const& p1) const {
@@ -160,7 +159,6 @@ int main(int argc, char const *argv[]) {
     std::pair<float,int> respuesta;
     //signal( SIGINT, &signalHandler );
     int idh = atoi(argv[2]);
-    peso = atof(argv[3]);
     std::fstream fd;
     std::string linea;
     
