@@ -77,6 +77,11 @@ psvn2c_abstraction.c:
 	$(CXX) $(OPT) ../algorithms/dfs.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
 
+
+%.ida_g: %n2 ../algorithms/ida_gap.cpp
+	$(CXX) $(OPT) ../algorithms/ida_gap.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+
 # N = 0
 %.gap: %.c ../algorithms/gap.cpp
 	$(CXX) $(OPT) ../algorithms/gap.cpp -std=gnu++0x -include $< -o $@
@@ -84,4 +89,4 @@ psvn2c_abstraction.c:
 
 .PHONY: clean
 clean:
-	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~ *.a_estrella*
+	rm -fr *.succ *.iddfs* *.act* *.dist_pdb psvn2c_core.c psvn2c_state_map.c *.dSYM *.o *~ *.a_est* *.ida*

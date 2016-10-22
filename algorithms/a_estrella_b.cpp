@@ -102,11 +102,9 @@ class Node {
             int h0 = this->heuristica(idh);
             start = std::clock();
 
-            //std::cout<<start<<"\n";
-
             cola.push(*this);
             while(!cola.empty()){
-               if ( ((std::clock() - start)/CLOCKS_PER_SEC) == 600) {
+                if ( ((std::clock() - start)/CLOCKS_PER_SEC) == 600) {
                    std::cout<<"entre aca \n";
                    break; 
                 }
@@ -120,7 +118,6 @@ class Node {
                     if (is_goal(&n.state)){
                         respuesta.first = n.g;
                         respuesta.second = contador;
-                        //std::cout <<  std::clock() - start ;
                         t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
 
                         std::cout<<respuesta.first<<","<<h0<<","<<respuesta.second<<","<<t_final<<","<<respuesta.second/t_final;
