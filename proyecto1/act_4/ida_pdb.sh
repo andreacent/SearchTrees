@@ -18,6 +18,6 @@ echo "grupo, algorithm, heuristic, domain, instance, cost, h0, generated, time, 
 while IFS='' read -r line || [[ -n "$line" ]]; do
 	ulimit -Sv $(($MAXMEM_MB*1024))
 	echo "$line"
-	printf "$line" | timeout --signal=SIGKILL 10s ./$1.ida_pdb $2 >> $1_ida_pdb_$2.csv
+	printf "$line" | gtimeout --signal=SIGKILL 10s ./$1.ida_pdb $2 >> $1_ida_pdb_$2.csv
 	ulimit -Sv unlimited
 done < "../instances/$1.txt"
