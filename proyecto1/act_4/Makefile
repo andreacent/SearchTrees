@@ -46,6 +46,12 @@ psvn2c_abstraction.c:
 %.ida_estrella: %.c ../algorithms/ida_estrella.cpp
 	$(CXX) $(OPT) ../algorithms/ida_estrella.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
+%.a_est_pdb: %.c ../algorithms/a_est_pdb.cpp
+	$(CXX) $(OPT) ../algorithms/a_est_pdb.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+%.a_est_mhttn: %.c ../algorithms/a_est_mhttn.cpp
+	$(CXX) $(OPT) ../algorithms/a_est_mhttn.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
 
 # N = 0
 %.act0: %.c ../algorithms/actividad1.cpp
