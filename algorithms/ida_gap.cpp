@@ -71,7 +71,7 @@ int bounded_search(Node n, unsigned bound,int hist){
 
 	if (f > (int)bound) return f;  
 	if(is_goal(&n.state)) {
-		h0 = h;
+		//h0 = h;
 		goal = &n;
 		b_goal = true;
 		return (int)n.g;
@@ -111,6 +111,7 @@ void ida(state_t state){
     start = std::clock();
 
 	Node root = Node(state, NULL, -1, 0);
+	h0 = gap(state,27);
 
 	//Profundidad > 0
 	while (!b_goal) {
