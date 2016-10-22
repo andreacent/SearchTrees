@@ -39,7 +39,7 @@ unsigned counter = 0;
 int h0;
 Node* goal;
 bool b_goal=false;
-float peso; 
+float peso=1; 
 
 // Funcion que calcula la heuristica gap del paper.
 // NOTA: El warning se genera porque se usan estados de 15-puzzle pero
@@ -140,7 +140,9 @@ int main(int argc, char const *argv[]) {
     state_t state;
     char str[MAX_LINE_LENGTH + 1];
 
-    peso = atoi(argv[1]);
+    if ( argc > 1 ) {
+    	peso = atoi(argv[1]);
+    }
 
     signal( SIGKILL, &signalHandler );
 
