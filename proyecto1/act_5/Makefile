@@ -2,7 +2,7 @@
 # if $(absname).txt exists it will be used as the input (abstraction commands) to build the abstraction,
 #   otherwise the user will enter the abstraction commands interactively.
 
-ACTDIR = act_1
+ACTDIR = act_5
 CC = gcc
 CXX = g++
 OPT = -g -Wall -O3 -Wno-unused-function -Wno-unused-variable
@@ -12,24 +12,24 @@ PSVNOPT1 = --state_map --no_backwards_moves --fwd_history_len=1 --remove_duplica
 PSVNOPT2 = --state_map --no_backwards_moves --fwd_history_len=2 --remove_duplicate_rules
 
 psvn2c_core.c:
-	cp ../src/psvn2c_core.c ./psvn2c_core.c
+	cp ../../src/psvn2c_core.c ./psvn2c_core.c
 
 psvn2c_state_map.c:
-	cp ../src/psvn2c_state_map.c ./psvn2c_state_map.c
+	cp ../../src/psvn2c_state_map.c ./psvn2c_state_map.c
 
 psvn2c_abstraction.c:
-	cp ../src/psvn2c_abstraction.c ./psvn2c_abstraction.c
+	cp ../../src/psvn2c_abstraction.c ./psvn2c_abstraction.c
 
 %.c: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
-	../bin/psvn2c $(PSVNOPT0) --name=$(*F) < $< > $@
+	../../bin/psvn2c $(PSVNOPT0) --name=$(*F) < $< > $@
 	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
 
 %n1: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
-	../bin/psvn2c $(PSVNOPT1) --name=$(*F) < $< > $@
+	../../bin/psvn2c $(PSVNOPT1) --name=$(*F) < $< > $@
 	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
 
 %n2: %.psvn psvn2c_core.c psvn2c_state_map.c psvn2c_abstraction.c
-	../bin/psvn2c $(PSVNOPT2) --name=$(*F) < $< > $@
+	../../bin/psvn2c $(PSVNOPT2) --name=$(*F) < $< > $@
 	rm -f ./psvn2c_core.c ./psvn2c_state_map.c ./psvn2c_abstraction.c
 
 .PRECIOUS: %.c

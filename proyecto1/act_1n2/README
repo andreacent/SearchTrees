@@ -7,5 +7,11 @@ Hay tres formas de compilar dfs0, dfs1 y dfs2 para fwd_history_len=0, fwd_histor
 
 Ejemplo:
 
-make pancake24.dfs0 
-./pancake24.dfs0 6 
+> make pancake24.dfs0 
+> ./pancake24.dfs0 6 
+
+Crear *.act*:
+> ./act 0
+
+Ejecutar *.act*:
+> ./act 1

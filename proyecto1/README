@@ -7,7 +7,9 @@ Estudiantes:
 
 Actividad 1 y 2: act_1n2/
 Actividad 3: act_3/
+Actividad 4: act_4/
+Actividad 5: act_5/
 
 Algoritmos implementados: algorithms/
 
-Generador Npuzzle: ProblemDomains/genNpuzzle.cpp
+Generador Npuzzle: genNpuzzle.cpp
