@@ -11,7 +11,7 @@ Ejemplo:
 > ./pancake24.dfs0 6 
 
 Crear *.act*:
-> ./act 0
+> ./act.sh 0
 
 Ejecutar *.act*:
-> ./act 1
+> ./act.sh 1

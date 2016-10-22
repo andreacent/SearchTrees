@@ -6,7 +6,7 @@ Pancake con a*:
 	o
 
 	make pancake28.a_estrella 
-	pancake28.a_estrella ../instances/pancake28.txt 1 > pancake28.csv
+	./pancake28.a_estrella ../instances/pancake28.txt 1 > pancake28_a.csv
 
 Pancake con ida*:
 	./ida_g.sh pancake28
