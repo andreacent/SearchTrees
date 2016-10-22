@@ -39,6 +39,7 @@ unsigned counter = 0;
 int h0;
 Node* goal;
 bool b_goal=false;
+float peso; 
 
 // Funcion que calcula la heuristica gap del paper.
 // NOTA: El warning se genera porque se usan estados de 15-puzzle pero
@@ -66,7 +67,7 @@ int bounded_search(Node n, unsigned bound,int hist){
 	state_t child;
 	ruleid_iterator_t iter;
 
-	h = gap(n.state,27);
+	h = gap(n.state,27) * peso;
 	f = (int)n.g + h;
 
 	if (f > (int)bound) return f;  
@@ -138,6 +139,8 @@ void signalHandler( int )
 int main(int argc, char const *argv[]) {
     state_t state;
     char str[MAX_LINE_LENGTH + 1];
+
+    peso = atoi(argv[1]);
 
     signal( SIGKILL, &signalHandler );
 
