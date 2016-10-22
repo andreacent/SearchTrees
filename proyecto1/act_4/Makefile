@@ -87,6 +87,12 @@ psvn2c_abstraction.c:
 %.ida_g: %n2 ../algorithms/ida_gap.cpp
 	$(CXX) $(OPT) ../algorithms/ida_gap.cpp -std=gnu++0x -include $< -o $@
 	rm -f $*.c
+%.ida_mhttn: %n2 ../algorithms/ida_mhttn.cpp
+	$(CXX) $(OPT) ../algorithms/ida_mhttn.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
+%.ida_pdb: %n2 ../algorithms/ida_pdb.cpp
+	$(CXX) $(OPT) ../algorithms/ida_pdb.cpp -std=gnu++0x -include $< -o $@
+	rm -f $*.c
 
 # N = 0
 %.gap: %.c ../algorithms/gap.cpp

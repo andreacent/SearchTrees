@@ -10,6 +10,25 @@
 #include <fstream>
 #include <string>
 
+unsigned tabla0[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+unsigned tabla1[16] = {1,0,1,2,2,1,2,3,3,2,3,4,4,3,4,5};
+unsigned tabla2[16] = {2,1,0,1,3,2,1,2,4,3,2,3,5,4,3,4};
+unsigned tabla3[16] = {3,2,1,0,4,3,2,1,5,4,3,2,6,5,4,3};
+unsigned tabla4[16] = {1,2,3,4,0,1,2,3,1,2,3,4,2,3,4,5};
+unsigned tabla5[16] = {2,1,2,3,1,0,1,2,2,1,2,3,3,2,3,4};
+unsigned tabla6[16] = {3,2,1,2,2,1,0,1,3,2,1,2,4,3,2,3};
+unsigned tabla7[16] = {4,3,2,1,3,2,1,0,4,3,2,1,5,4,3,2};
+unsigned tabla8[16] = {2,3,4,5,1,2,3,4,0,1,2,3,1,2,3,4};
+unsigned tabla9[16] = {3,2,3,4,2,1,2,3,1,0,1,2,2,1,2,3};
+unsigned tabla10[16] = {4,3,2,3,3,2,1,2,2,1,0,1,3,2,1,2};
+unsigned tabla11[16] = {5,4,3,2,4,3,2,1,3,2,1,0,4,3,2,1};
+unsigned tabla12[16] = {3,4,5,6,2,3,4,5,1,2,3,4,0,1,2,3};
+unsigned tabla13[16] = {4,3,4,5,3,2,3,4,2,1,2,3,1,0,1,2};
+unsigned tabla14[16] = {5,4,3,4,4,3,2,3,3,2,1,2,2,1,0,1};
+unsigned tabla15[16] = {6,5,4,3,5,4,3,2,4,3,2,1,3,2,1,0};
+
+unsigned* tabla[16] = {tabla0,tabla1,tabla2,tabla3,tabla4,tabla5,tabla6,tabla7,tabla8,tabla9,tabla10,tabla11,tabla12,tabla13,tabla14,tabla15};
+
 using namespace std;
 
 #define  MAX_LINE_LENGTH 999 
