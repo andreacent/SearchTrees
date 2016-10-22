@@ -1,3 +1,5 @@
+// Si no le pasan argumento, el tomara el peso 1 por default. 
+
 #include <map>
 #include <stdlib.h>
 #include <stdio.h>
@@ -38,7 +40,6 @@ Node Node::make_node(state_t st, int act, unsigned gcost){
 unsigned counter = 0;
 int h0;
 Node* goal;
-bool b_goal=false;
 float peso=1; 
 
 // Funcion que calcula la heuristica gap del paper.
@@ -72,9 +73,7 @@ int bounded_search(Node n, unsigned bound,int hist){
 
 	if (f > (int)bound) return f;  
 	if(is_goal(&n.state)) {
-		//h0 = h;
 		goal = &n;
-		b_goal = true;
 		return (int)n.g;
 	}
 
@@ -91,7 +90,7 @@ int bounded_search(Node n, unsigned bound,int hist){
 
 		int p = bounded_search(m,bound,child_hist);
 
-		if (b_goal) return p; 
+		if (goal != nullptr) return p; 
 
 		t = min(t,p);
 	};
@@ -115,10 +114,10 @@ void ida(state_t state){
 	h0 = gap(state,27);
 
 	//Profundidad > 0
-	while (!b_goal) {
+	while (true) {
 		counter++;
 		unsigned p = bounded_search(root,bound,hist);
-		if (b_goal) {
+		if (goal != nullptr) {
 			t_final = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
 			printf("%u, %d, %u, %f, %.10e\n",goal->g,h0,counter,t_final,counter/t_final);	
 			return; 
